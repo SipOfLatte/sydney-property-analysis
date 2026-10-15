@@ -34,7 +34,7 @@ Growth is after inflation unless stated.
 | 4 | **Open a due-diligence file on 30 value-screen suburbs**, starting with Turramurra, Randwick and Kings Langley | Above-median growth *and* priced 5–22% below comparable areas | **Medium** — needs local checks |
 | 5 | **Target 4–5 bedroom, 3-bathroom houses with 2 car spaces** | Features stop adding value beyond this point | **Medium–High** |
 | 6 | **Exchange contracts in December–January; build the pipeline in Nov–Dec** | January is ~3% cheaper like-for-like | **Medium** — small effect |
-| 7 | **If the fund buys units at all, buy supply-constrained coastal markets** (Manly, Mona Vale, Avalon Beach), not high-rise corridors | Every top-15 unit market is coastal; 38 of 173 unit suburbs lost real value | **High** |
+| 7 | **If the fund buys units at all, buy supply-constrained coastal markets** (Manly, Mona Vale, Avalon Beach), not high-rise corridors | Every top-15 unit market is coastal; units 10–20 km from the CBD grew just 0.2% a year, the weakest band in the city | **High** |
 | 8 | **Do not chase unit yield.** The highest-yield unit markets (Lakemba, Yagoona, Merrylands, 5.5–6.3% gross) gave up more growth than they paid in rent | Total return falls from 8.8% to 8.1% across unit yield quartiles | **Medium–High** |
 | 9 | **For houses, pick the yield level that suits cash-flow needs** — the market prices the trade-off fairly | Total return is 10.5–10.8% a year in *every* house yield quartile | **Medium–High** |
 | 10 | **Favour 4-bedroom houses for income:** about 5% dearer than 3-bedroom, but about 28% more rent | Hedonic price model vs DCJ rent by bedroom count | **Medium** |
@@ -68,6 +68,11 @@ both turning points**, which makes it a useful early signal for timing commitmen
 
 At suburb level the leaders were Vaucluse (8.0% a year), Freshwater (7.8%), Bellevue Hill (7.5%), Turramurra (7.4%)
 and Avalon Beach (7.3%).
+
+Geographically, house growth fades only gently with distance — 5.6% a year inside 10 km against 4.7% beyond 40 km
+(correlation −0.32), so there are strong and weak markets at every radius. Units behave differently: distance barely
+predicts their growth (correlation −0.06), and the 10–20 km band, where most of the decade's apartment towers were
+built, was the weakest in the city at 0.2% a year.
 
 **Value candidates (buy after due diligence):** 30 suburbs combine above-median growth with a 5–22% discount to
 comparable areas — including Mount Colah, Frenchs Forest, Hornsby, Thornleigh, Drummoyne, Rose Bay and Randwick.

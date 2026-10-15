@@ -27,6 +27,7 @@ Streamlit dashboard.
 | **Return without extra risk** | For houses, Woollahra, Willoughby, Ku-ring-gai and Mosman combined top growth with below-median volatility, and held their value in the 2017–19 downturn while the west fell 7–10%. |
 | **Feature sweet spot** | Target 4–5 bedrooms, 3 bathrooms, 2 car spaces. A 6th bedroom (−1%) and 3rd car space (0%) add nothing. |
 | **Timing** | Cycle timing matters ~10× more than seasonality. January is ~3% cheaper like-for-like, with half the listings. |
+| **The middle-ring unit trap** | Units 10–20 km from the CBD grew **0.2% a year** after inflation — the weakest band in the city, and where most of the decade's apartment supply landed. |
 | **Income sweet spot** | A 4th bedroom adds ~5% to a house's price but ~28% to its rent. |
 
 ![Sydney price cycles](reports/figures/q1_price_cycle.png)
@@ -61,15 +62,20 @@ screener therefore requires **independent evidence of demand** (above-median pas
 
 ## The dashboard
 
-Four pages built with Streamlit and Plotly:
+Six pages built with Streamlit and Plotly:
 
 | Page | What it answers |
 |---|---|
 | **Market Overview** | Price cycles, nominal vs real, like-for-like vs median, seasonality |
+| **Suburb Map** | Growth, value gap, yield and price across the city, against distance from the CBD |
 | **Suburb Explorer** | Growth, rank, risk, value gap and yield for any suburb, with price history |
 | **Rental Yield** | Yields through the cycle, total return by segment, income vs price by postcode |
 | **Investment Screener** | Filter by budget, growth, volatility and value gap; export the shortlist |
 | **Features & Method** | What each bedroom/bathroom/car space is worth, plus method and limitations |
+
+**Suburb Map** — colour 551 mapped suburbs by growth, value gap, yield or price:
+
+![Suburb Map](reports/screenshots/05_suburb_map.png)
 
 **Suburb Explorer** — every measured suburb, with growth, risk, value gap, yield and price history:
 
@@ -115,7 +121,7 @@ To rerun the analysis instead, install the full environment with
 | Source | Provides | Rows used |
 |---|---|---|
 | [NSW Valuer General sales](https://www.kaggle.com/datasets/josephcheng123456/nsw-australia-property-data) (Kaggle) | Every Sydney metro residential sale, 2014–2023 | 881,664 after cleaning |
-| [Domain Sydney listings](https://www.kaggle.com/datasets/alexlau203/sydney-house-prices) (Kaggle) | Bedrooms, bathrooms, parking, suburb fundamentals | 7,290 houses |
+| [Domain Sydney listings](https://www.kaggle.com/datasets/alexlau203/sydney-house-prices) (Kaggle) | Bedrooms, bathrooms, parking, suburb fundamentals, suburb coordinates | 7,290 houses · 551 suburb centroids |
 | [ABS Sydney CPI](https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia) (table 6401017) | Inflation adjustment (+29% over the decade) | quarterly series |
 | [NSW DCJ Rent and Sales Report](https://dcj.nsw.gov.au/about-us/families-and-communities-statistics/housing-rent-and-sales/rent-and-sales-report.html) | Median weekly rent by postcode (new bonds lodged), December quarters 2017–2023 | 8,308 postcode rows |
 
@@ -135,7 +141,8 @@ python src/clean_sales.py
 ```
 
 Rent tables come from the NSW DCJ *Rent and Sales Report* (December quarter files, 2017–2023); parse them with
-`python src/prepare_rent.py`. Then run the notebooks in order. They regenerate everything in `data/exports/` that
+`python src/prepare_rent.py`, and build the map's suburb centroids with `python src/prepare_coords.py`.
+Then run the notebooks in order. They regenerate everything in `data/exports/` that
 the dashboard reads.
 
 ---
@@ -145,7 +152,7 @@ the dashboard reads.
 ```
 app/                  Streamlit dashboard (app.py + views/)
 notebooks/            01 market overview · 02 suburb growth & risk · 03 features & value · 04 rental yield
-src/                  clean_sales.py · repeat_sales.py · prepare_rent.py · viz_style.py
+src/                  clean_sales.py · repeat_sales.py · prepare_rent.py · prepare_coords.py · viz_style.py
 data/exports/         Small CSVs the dashboard reads (committed)
 data/external/        ABS CPI series
 docs/                 Project brief · data quality report
@@ -163,5 +170,6 @@ reports/screenshots/  Dashboard screenshots used in this README
 - Feature values come from a smaller Domain sample (7,290 houses, 2016–2021, half of them from 2021).
 - Value gaps are modelled for **houses only**, and only against *measured* fundamentals.
 - Repeat sales slightly overstate growth where owners renovated between sales.
+- The map plots **suburb centre points, not boundaries**, and 551 of 758 suburbs have a centroid.
 - Data ends in 2023 and excludes the Central Coast and Blue Mountains.
 - Past growth is not a forecast. The screener output is a due-diligence list, not a buy list.

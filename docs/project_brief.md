@@ -37,7 +37,7 @@ say how confident we are, give the sample size, and state the caveats.
 1. Cleaned, documented dataset plus a data quality report
 2. Analysis notebooks, one per question group
 3. Explainable price model (feature importance, undervalued-suburb list)
-4. Streamlit dashboard (deployed, public URL): Market Overview · Suburb Explorer · Investment Screener
+4. Streamlit dashboard (deployed, public URL): Market Overview · Suburb Map · Suburb Explorer · Rental Yield · Investment Screener · Features & Method
 5. Executive summary (1–2 pages): findings, recommendations, limitations
 
 ## Known limitations (full detail in data_quality_report.md)

@@ -11,6 +11,7 @@ page_style()
 
 pages = [
     st.Page("views/market_overview.py", title="Market Overview", icon=":material/trending_up:", default=True),
+    st.Page("views/suburb_map.py", title="Suburb Map", icon=":material/map:"),
     st.Page("views/suburb_explorer.py", title="Suburb Explorer", icon=":material/location_city:"),
     st.Page("views/rental_yield.py", title="Rental Yield", icon=":material/payments:"),
     st.Page("views/investment_screener.py", title="Investment Screener", icon=":material/filter_alt:"),
