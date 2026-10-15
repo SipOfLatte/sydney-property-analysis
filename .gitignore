@@ -1,0 +1,15 @@
+# Data (large / re-downloadable; see README for Kaggle refs)
+data/raw/
+data/processed/
+# Credentials
+kaggle.json
+access_token
+.env
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+# Power BI temp
+*.pbix.bak
+
+# Streamlit local secrets
+.streamlit/secrets.toml

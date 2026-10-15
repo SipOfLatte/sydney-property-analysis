@@ -1,0 +1,195 @@
+suburb,council,real_cagr_%,value_gap_%,median_price_2022_23,sales_2022_23,shortlist,value_candidate
+Ambarvale,Campbelltown,4.594,-4.973,780000.0,137,False,False
+Annandale,Inner West,5.542,0.356,2350000.0,133,False,False
+Ashfield,Inner West,4.634,-10.706,1937500.0,194,False,False
+Auburn,Cumberland,4.231,-5.506,1130000.0,319,False,False
+Avalon Beach,Northern Beaches,7.295,15.935,2750000.0,277,False,False
+Balgowlah,Northern Beaches,6.438,-7.153,3325000.0,121,False,True
+Balmain,Inner West,4.544,16.135,3200000.0,165,False,False
+Bankstown,Canterbury-Bankstown,5.688,9.339,1287500.0,244,False,False
+Bass Hill,Canterbury-Bankstown,4.072,11.331,1105500.0,170,False,False
+Baulkham Hills,The Hills Shire,5.746,-9.952,1708000.0,632,False,True
+Bayview,Northern Beaches,5.59,46.773,2675000.0,67,False,False
+Beacon Hill,Northern Beaches,5.866,-7.019,2127500.0,144,False,True
+Beaumont Hills,The Hills Shire,4.986,8.579,1750000.0,235,False,False
+Beecroft,Hornsby,5.807,5.255,2367500.0,210,False,False
+Bella Vista,The Hills Shire,5.133,39.789,2306000.0,192,False,False
+Bellevue Hill,Woollahra,7.467,32.349,8910000.0,111,False,False
+Belmore,Canterbury-Bankstown,3.466,-12.768,1455000.0,174,False,False
+Belrose,Northern Beaches,4.172,3.839,2220000.0,161,False,False
+Beverly Hills,Georges River,4.627,-13.855,1550000.0,183,False,False
+Bexley,Bayside,3.918,1.272,1560000.0,291,False,False
+Bilgola Plateau,Northern Beaches,6.123,-3.899,2469000.0,102,False,False
+Blacktown,Blacktown,3.245,-7.13,925000.0,896,False,False
+Blakehurst,Georges River,3.884,9.644,2400000.0,121,False,False
+Bligh Park,Hawkesbury,4.7,0.936,893750.0,168,False,False
+Bondi Junction,Waverley,5.754,-4.677,3201000.0,64,False,False
+Bossley Park,Fairfield,4.887,5.029,1100000.0,223,False,False
+Bradbury,Campbelltown,5.34,-0.284,785000.0,280,False,False
+Bronte,Waverley,7.056,23.423,5550000.0,113,False,False
+Cabramatta,Fairfield,3.967,4.149,1076000.0,160,False,False
+Cambridge Park,Penrith,5.627,-10.016,800000.0,169,False,True
+Camden,Camden,5.191,18.82,1100000.0,88,False,False
+Camden South,Camden,4.947,-1.773,940000.0,119,False,False
+Campbelltown,Campbelltown,4.226,4.107,810000.0,343,False,False
+Canley Heights,Fairfield,4.246,0.28,1000000.0,242,False,False
+Caringbah South,Sutherland,4.847,11.396,2261754.0,337,False,False
+Carlingford,City of Parramatta,4.928,2.906,1910000.0,418,False,False
+Castle Hill,The Hills Shire,6.216,14.682,2190000.0,750,False,False
+Casula,Liverpool,3.513,12.419,1002000.0,303,False,False
+Chatswood,Willoughby,4.845,10.995,3085000.0,220,False,False
+Cherrybrook,Hornsby,5.859,14.5,2200000.0,343,False,False
+Chester Hill,Canterbury-Bankstown,4.618,-5.655,1047500.0,264,False,False
+Chipping Norton,Liverpool,5.049,2.874,1250000.0,188,False,False
+Clovelly,Randwick,6.544,4.262,4330000.0,99,False,False
+Colyton,Penrith,5.339,-5.747,820000.0,237,False,True
+Concord,Canada Bay,5.827,16.68,2800000.0,263,False,False
+Condell Park,Canterbury-Bankstown,5.098,4.058,1220000.0,251,False,False
+Cranebrook,Penrith,4.49,-13.654,850000.0,355,False,False
+Cromer,Northern Beaches,6.262,-8.179,2097500.0,140,False,True
+Currans Hill,Camden,4.011,-10.205,870000.0,147,False,False
+Doonside,Blacktown,5.912,0.912,881000.0,234,True,False
+Drummoyne,Canada Bay,5.288,-14.776,2688500.0,150,False,True
+Eagle Vale,Campbelltown,5.602,-2.305,816250.0,102,False,False
+Earlwood,Canterbury-Bankstown,4.599,-7.588,1800000.0,308,False,False
+Eastwood,Ryde,4.353,17.324,2471000.0,307,False,False
+Elderslie,Camden,4.567,6.329,960000.0,205,False,False
+Emu Plains,Penrith,4.849,8.451,976250.0,186,False,False
+Engadine,Sutherland,4.476,-10.562,1315000.0,364,False,False
+Epping,City of Parramatta,4.66,19.974,2300000.0,327,False,False
+Ermington,City of Parramatta,5.265,8.858,1758000.0,233,False,False
+Fairfield,Fairfield,3.983,-3.261,1000000.0,232,False,False
+Fairfield West,Fairfield,5.12,-4.157,950500.0,220,False,False
+Five Dock,Canada Bay,6.036,-4.494,2545000.0,132,False,False
+Frenchs Forest,Northern Beaches,5.089,-21.355,2120000.0,299,False,True
+Freshwater,Northern Beaches,7.786,-2.483,3660750.0,98,False,False
+Georges Hall,Canterbury-Bankstown,4.315,1.306,1200000.0,232,False,False
+Gladesville,Ryde,4.819,-16.727,2580000.0,222,False,False
+Glebe,City of Sydney,5.495,25.08,3020000.0,92,False,False
+Glendenning,Blacktown,4.893,-5.76,877500.0,94,False,False
+Glenfield,Campbelltown,3.858,-2.643,963500.0,186,False,False
+Glenmore Park,Penrith,3.992,0.399,1030000.0,605,False,False
+Glenwood,Blacktown,5.838,17.13,1470000.0,302,True,False
+Granville,City of Parramatta,3.934,-12.979,1012000.0,165,False,False
+Green Valley,Liverpool,4.403,-7.177,915000.0,177,False,False
+Greenacre,Canterbury-Bankstown,3.761,-0.315,1265000.0,430,False,False
+Gregory Hills,Camden,4.253,3.032,950000.0,319,False,False
+Greystanes,Cumberland,4.667,7.891,1160000.0,488,False,False
+Guildford,Cumberland,4.67,-3.477,1036000.0,369,False,False
+Gymea Bay,Sutherland,4.364,-0.412,1920000.0,157,False,False
+Harrington Park,Camden,4.793,21.947,1462110.0,322,False,False
+Hinchinbrook,Liverpool,4.345,1.103,950000.0,178,False,False
+Hornsby,Hornsby,5.585,-18.738,1650000.0,202,False,True
+Hornsby Heights,Hornsby,4.461,-13.912,1552500.0,168,False,False
+Hunters Hill,Hunters Hill,4.713,13.048,4050000.0,153,False,False
+Hurstville,Georges River,4.693,17.594,1900000.0,233,False,False
+Ingleburn,Campbelltown,4.885,-1.052,859000.0,355,False,False
+Jordan Springs,Penrith,3.109,0.887,920000.0,373,False,False
+Kellyville,The Hills Shire,5.261,7.966,1773750.0,702,False,False
+Kellyville Ridge,Blacktown,4.938,11.74,1522000.0,233,False,False
+Killara,Ku-ring-gai,5.782,10.596,3880000.0,167,True,False
+Kings Langley,Blacktown,6.502,-6.831,1380000.0,225,True,True
+Kingsford,Randwick,4.965,25.798,2500000.0,148,False,False
+Kingsgrove,Canterbury-Bankstown,5.124,-6.158,1591000.0,241,False,True
+Kingswood,Penrith,5.896,5.068,860000.0,162,True,False
+Kirrawee,Sutherland,4.8,1.659,1550000.0,175,False,False
+Lalor Park,Blacktown,4.307,-24.063,850000.0,234,False,False
+Leichhardt,Inner West,5.2,-6.273,1961000.0,306,False,True
+Lethbridge Park,Blacktown,5.278,-20.533,656500.0,112,False,True
+Leumeah,Campbelltown,5.482,-5.452,805000.0,208,False,True
+Lidcombe,Cumberland,3.757,-5.851,1460000.0,215,False,False
+Lilyfield,Inner West,4.699,0.821,2345000.0,157,False,False
+Lindfield,Ku-ring-gai,5.957,6.371,3800000.0,153,False,False
+Liverpool,Liverpool,4.551,1.436,970000.0,255,False,False
+Lurnea,Liverpool,4.616,-1.923,885000.0,183,False,False
+Macquarie Fields,Campbelltown,4.781,-14.529,835000.0,181,False,False
+Manly,Northern Beaches,5.915,23.465,4400000.0,101,False,False
+Marayong,Blacktown,5.721,8.237,886500.0,178,True,False
+Maroubra,Randwick,6.059,-3.125,2710000.0,383,True,False
+Marrickville,Inner West,5.64,12.403,1940000.0,358,False,False
+Mascot,Bayside,5.273,-12.435,1838750.0,142,False,True
+Menai,Sutherland,4.292,3.478,1480000.0,167,False,False
+Merrylands,Cumberland,4.751,1.388,1113600.0,403,False,False
+Minchinbury,Blacktown,3.174,2.619,960000.0,105,False,False
+Minto,Campbelltown,4.319,4.069,863750.0,202,False,False
+Miranda,Sutherland,5.38,-11.873,1700000.0,285,False,True
+Mona Vale,Northern Beaches,6.996,-3.888,2465000.0,168,False,False
+Moorebank,Liverpool,4.34,0.444,1211000.0,304,False,False
+Mosman,Mosman,6.546,16.287,5050000.0,436,True,False
+Mount Annan,Camden,4.268,-8.813,1000000.0,306,False,False
+Mount Colah,Hornsby,5.035,-22.08,1562500.0,164,False,True
+Mount Druitt,Blacktown,5.064,4.547,900000.0,168,False,False
+Mount Pritchard,Fairfield,3.591,-10.455,881000.0,229,False,False
+Narellan,Camden,4.428,-10.813,898000.0,104,False,False
+Narellan Vale,Camden,4.862,3.969,920000.0,177,False,False
+Newport,Northern Beaches,5.672,13.666,2950000.0,175,False,False
+Newtown,City of Sydney,5.96,10.465,1950000.0,129,True,False
+North Bondi,Waverley,6.842,8.898,4400000.0,136,False,False
+North Narrabeen,Northern Beaches,6.626,-13.074,2027500.0,113,False,True
+North Rocks,City of Parramatta,6.175,-8.33,1803500.0,170,False,True
+North Ryde,Ryde,5.854,-1.241,2250000.0,241,False,False
+Northbridge,Willoughby,6.673,11.348,4710000.0,118,False,False
+Northmead,City of Parramatta,4.3,-15.029,1420000.0,168,False,False
+Oakhurst,Blacktown,4.365,-9.694,818000.0,133,False,False
+Oatley,Georges River,5.249,22.502,2150000.0,199,False,False
+Oran Park,Camden,4.569,-1.836,1060000.0,638,False,False
+Oyster Bay,Sutherland,5.244,-11.927,1700000.0,137,False,True
+Paddington,Woollahra,6.016,5.84,4597500.0,122,True,False
+Padstow,Canterbury-Bankstown,4.375,4.582,1300000.0,338,False,False
+Panania,Canterbury-Bankstown,3.353,7.478,1300000.0,326,False,False
+Peakhurst,Georges River,4.321,-2.371,1425000.0,217,False,False
+Penrith,Penrith,5.104,20.374,900000.0,254,False,False
+Plumpton,Blacktown,4.979,0.371,872500.0,132,False,False
+Prestons,Liverpool,4.494,-4.886,972500.0,218,False,False
+Punchbowl,Canterbury-Bankstown,4.576,-8.941,1150000.0,268,False,False
+Pymble,Ku-ring-gai,5.976,13.064,3520000.0,261,True,False
+Quakers Hill,Blacktown,5.216,6.187,1106500.0,567,False,False
+Raby,Campbelltown,5.55,-5.499,862000.0,141,False,True
+Randwick,Randwick,6.199,-13.001,3300000.0,239,True,True
+Redfern,City of Sydney,5.059,6.763,2800000.0,42,False,False
+Revesby,Canterbury-Bankstown,3.313,1.727,1282900.0,316,False,False
+Richmond,Hawkesbury,5.386,6.633,855000.0,113,False,False
+Riverstone,Blacktown,5.433,15.947,1048000.0,436,False,False
+Riverwood,Canterbury-Bankstown,4.171,2.029,1250000.0,151,False,False
+Rooty Hill,Blacktown,4.597,-8.21,870000.0,237,False,False
+Ropes Crossing,Blacktown,3.356,-3.118,865000.0,149,False,False
+Rose Bay,Woollahra,6.417,-13.055,5325000.0,112,False,True
+Roselands,Canterbury-Bankstown,4.438,-15.581,1300000.0,182,False,False
+Rosemeadow,Campbelltown,5.908,-7.812,755000.0,197,False,True
+Roseville,Ku-ring-gai,3.83,1.405,3550000.0,199,False,False
+Rouse Hill,The Hills Shire,5.067,-3.934,1400000.0,285,False,False
+Rozelle,Inner West,5.215,-9.358,2400000.0,130,False,True
+Ruse,Campbelltown,4.209,-5.165,790000.0,148,False,False
+Ryde,Ryde,6.057,-1.522,2300000.0,354,False,False
+Sans Souci,Bayside,4.572,-2.503,2100000.0,161,False,False
+Schofields,Blacktown,7.117,13.45,1200000.0,456,True,False
+Seaforth,Northern Beaches,6.452,-4.889,3500000.0,165,False,False
+Seven Hills,Blacktown,4.532,-9.092,1000000.0,421,False,False
+Smithfield,Fairfield,4.48,-2.671,968000.0,234,False,False
+South Penrith,Penrith,4.283,-3.108,870000.0,302,False,False
+South Windsor,Hawkesbury,4.538,-14.595,785000.0,134,False,False
+Spring Farm,Camden,4.342,-6.928,945000.0,398,False,False
+St Andrews,Campbelltown,4.528,-2.197,820000.0,149,False,False
+St Clair,Penrith,4.395,7.287,915000.0,381,False,False
+St Ives,Ku-ring-gai,6.946,5.556,2960000.0,429,True,False
+St Marys,Penrith,5.394,8.443,855000.0,231,False,False
+Stanhope Gardens,Blacktown,5.116,-4.522,1405000.0,199,False,False
+Stanmore,Inner West,5.451,0.61,2120000.0,131,False,False
+Strathfield,Strathfield,6.491,70.013,3475000.0,297,False,False
+Sylvania,Sutherland,5.331,-7.852,1725000.0,202,False,True
+The Ponds,Blacktown,5.509,19.129,1480000.0,544,False,False
+Thornleigh,Hornsby,5.85,-14.973,1781944.0,176,False,True
+Toongabbie,Blacktown,4.589,-14.657,1162500.0,266,False,False
+Turramurra,Ku-ring-gai,7.422,-6.738,3100000.0,282,True,True
+Vaucluse,Woollahra,7.987,41.358,8662500.0,148,True,False
+Wahroonga,Ku-ring-gai,6.87,33.812,2704000.0,416,True,False
+Warriewood,Northern Beaches,5.741,-11.504,2200000.0,132,False,True
+Wattle Grove,Liverpool,4.352,-22.538,1067500.0,172,False,False
+Wentworthville,Cumberland,4.474,10.424,1330000.0,175,False,False
+West Hoxton,Liverpool,3.462,6.777,1100000.0,165,False,False
+West Pennant Hills,The Hills Shire,6.522,12.087,2394000.0,342,False,False
+Whalan,Blacktown,4.436,-6.721,690500.0,112,False,False
+Willoughby,Willoughby,6.312,-1.784,3187500.0,146,False,False
+Winston Hills,City of Parramatta,4.092,-3.27,1440000.0,251,False,False
+Woollahra,Woollahra,6.024,40.91,5951000.0,120,True,False
+Yagoona,Canterbury-Bankstown,5.07,-5.682,1150000.0,332,False,True
