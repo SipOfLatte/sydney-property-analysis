@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from lib import (GRID, HOUSE, INK_2, MUTED, SEGMENT_COLORS, UNIT, footer_note, load, money,
+from lib import (FAINT, GRID, HOUSE, INK_2, MUTED, SEGMENT_COLORS, UNIT, footer_note, load, money,
                  style_fig, takeaway)
 
 st.title("Investment Screener")
@@ -63,7 +63,7 @@ with tab1:
         fig = go.Figure()
         others = d.dropna(subset=["value_gap_%"])
         fig.add_trace(go.Scatter(x=others["value_gap_%"], y=others["real_cagr_%"], mode="markers",
-                                 name="All suburbs", marker=dict(size=7, color="#dedcd4"),
+                                 name="All suburbs", marker=dict(size=7, color=FAINT),
                                  text=others.suburb, hovertemplate="%{text}<extra></extra>"))
         fig.add_trace(go.Scatter(x=plot["value_gap_%"], y=plot["real_cagr_%"], mode="markers", name="Matches",
                                  marker=dict(size=11, color=SEGMENT_COLORS[segment],
@@ -72,6 +72,8 @@ with tab1:
                                  hovertemplate="<b>%{text}</b><br>growth %{y:.1f}%/yr · value gap %{x:+.0f}%"
                                                "<br>median $%{customdata:,.0f}<extra></extra>"))
         fig.add_vline(x=0, line=dict(color=MUTED, width=1, dash="dot"))
+        fig.update_xaxes(ticksuffix="%")
+        fig.update_yaxes(ticksuffix="%")
         fig.update_layout(hovermode="closest")
         st.plotly_chart(style_fig(fig, 470, ylabel="Real growth a year, 2014–2023",
                                   xlabel="Value gap: price vs comparable areas (negative = cheaper)"),
@@ -84,7 +86,7 @@ with tab2:
     cdata = councils[councils.segment == segment]
     matched = set(res.council)
     fig = go.Figure()
-    for inside, name, colr, size in [(False, "Other councils", "#dedcd4", 9), (True, "Councils in results",
+    for inside, name, colr, size in [(False, "Other councils", FAINT, 9), (True, "Councils in results",
                                                                                SEGMENT_COLORS[segment], 14)]:
         sub = cdata[cdata.council.isin(matched) == inside]
         fig.add_trace(go.Scatter(x=sub["volatility_%"], y=sub["real_cagr_%"], mode="markers", name=name,
@@ -94,6 +96,8 @@ with tab2:
                                                "<br>2017–19 downturn %{customdata:+.1f}%<extra></extra>"))
     fig.add_vline(x=cdata["volatility_%"].median(), line=dict(color=MUTED, width=1, dash="dot"))
     fig.add_hline(y=cdata["real_cagr_%"].median(), line=dict(color=MUTED, width=1, dash="dot"))
+    fig.update_xaxes(ticksuffix="%")
+    fig.update_yaxes(ticksuffix="%")
     fig.update_layout(hovermode="closest")
     st.plotly_chart(style_fig(fig, 470, ylabel="Real growth a year, 2014–2023",
                               xlabel="Volatility (noise-adjusted, % a year)"), use_container_width=True)

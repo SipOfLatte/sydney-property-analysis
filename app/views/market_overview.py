@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from lib import (GRID, HOUSE, INK_2, MUTED, SEGMENT_COLORS, UNIT, cpi_factor, footer_note,
+from lib import (BAD, GRID, HOUSE, INK_2, MUTED, SEGMENT_COLORS, UNIT, cpi_factor, footer_note,
                  load, money, style_fig, takeaway)
 
 
@@ -77,7 +77,7 @@ with c1:
     st.subheader("Year-on-year change in the median")
     yoy = annual.dropna(subset=["yoy_nominal_%"])
     fig = go.Figure(go.Bar(x=yoy.year, y=yoy["yoy_nominal_%"],
-                           marker_color=np.where(yoy["yoy_nominal_%"] >= 0, HOUSE, "#d03b3b"),
+                           marker_color=np.where(yoy["yoy_nominal_%"] >= 0, HOUSE, BAD),
                            hovertemplate="%{x}: %{y:+.1f}%<extra></extra>"))
     fig.update_xaxes(dtick=1)
     st.plotly_chart(style_fig(fig, 330, legend=False, ylabel="% change"), use_container_width=True)
@@ -98,7 +98,7 @@ with c2:
     else:
         d = s[s.segment == "House"]
         fig.add_trace(go.Bar(x=d.month, y=d["volume_effect_%"], name="All dwellings",
-                             marker_color=np.where(d["volume_effect_%"] >= 0, HOUSE, "#d03b3b"),
+                             marker_color=np.where(d["volume_effect_%"] >= 0, HOUSE, BAD),
                              hovertemplate="%{x}: %{y:+.0f}%<extra></extra>"))
         ylab = "% vs a typical month"
     st.plotly_chart(style_fig(fig, 330, legend=metric == "Price effect", ylabel=ylab), use_container_width=True)

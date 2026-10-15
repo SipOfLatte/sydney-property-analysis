@@ -8,17 +8,19 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]
 EXPORTS = ROOT / "data" / "exports"
 
-# Same palette as the notebook figures, so report and dashboard read as one system
-HOUSE = "#2a78d6"
-UNIT = "#eb6834"
+# Dark-mode palette: the same hues as the notebook figures, stepped for a dark surface
+HOUSE = "#3987e5"
+UNIT = "#d95926"
 SEGMENT_COLORS = {"House": HOUSE, "Unit/Townhouse": UNIT}
-INK = "#0b0b0b"
-INK_2 = "#52514e"
+INK = "#ffffff"
+INK_2 = "#c3c2b7"
 MUTED = "#898781"
-GRID = "#e1e0d9"
-SURFACE = "#fcfcfb"
+GRID = "#2c2c2a"
+SURFACE = "#1a1a19"        # chart surface
+PLANE = "#0d0d0d"          # page background
+FAINT = "#3f3f3c"          # de-emphasised marks (context dots, baselines)
 GOOD = "#0ca30c"
-BAD = "#d03b3b"
+BAD = "#e66767"
 
 PAGE_ICON = "🏠"
 
@@ -29,6 +31,7 @@ def page_style() -> None:
         f"""<style>
         .block-container {{padding-top: 2.2rem; max-width: 1250px;}}
         h1, h2, h3 {{color: {INK};}}
+        [data-testid="stMetricDelta"] {{color: {INK_2};}}
         [data-testid="stMetricValue"] {{font-size: 1.6rem;}}
         .caption {{color: {INK_2}; font-size: 0.92rem;}}
         </style>""",
@@ -73,7 +76,7 @@ def money(v: float) -> str:
 def takeaway(text: str) -> None:
     """A finding callout, matching the 'What this means' boxes in the notebooks."""
     st.markdown(
-        f"""<div style="border-left: 3px solid {HOUSE}; background: #f4f8fe; padding: 0.7rem 1rem;
+        f"""<div style="border-left: 3px solid {HOUSE}; background: rgba(57,135,229,0.12); padding: 0.7rem 1rem;
         border-radius: 4px; margin: 0.4rem 0 1rem 0; color: {INK};">{text}</div>""",
         unsafe_allow_html=True,
     )

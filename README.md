@@ -3,7 +3,7 @@
 An end-to-end analytics project on the Sydney housing market, framed as a real engagement: a property
 investment fund wants evidence on **where**, **what type** and **when** to buy.
 
-**[→ Live dashboard](#)** · **[Executive summary](docs/executive_summary.md)** · **[Notebooks](notebooks/)** ·
+**[→ Live dashboard](https://sydney-property-analysis.streamlit.app/)** · **[Executive summary](docs/executive_summary.md)** · **[Notebooks](notebooks/)** ·
 **[Data quality report](docs/data_quality_report.md)** · **[Project brief](docs/project_brief.md)**
 
 Built with Python (pandas, scikit-learn, statsmodels) on **881,664 NSW Valuer General sales**, with an interactive

@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from lib import (BAD, GOOD, GRID, HOUSE, INK_2, MUTED, SEGMENT_COLORS, footer_note, load, money,
+from lib import (BAD, FAINT, GOOD, GRID, HOUSE, INK_2, MUTED, SEGMENT_COLORS, footer_note, load, money,
                  style_fig, takeaway)
 
 st.title("Suburb Explorer")
@@ -84,10 +84,11 @@ with right:
                   options["real_cagr_%"].median()],
     })
     fig = go.Figure(go.Bar(x=bars.value, y=bars.label, orientation="h",
-                           marker_color=[colour, "#9ec5f4", "#c3c2b7"],
+                           marker_color=[colour, "#1c5cab", FAINT],
                            text=[f"{v:.1f}%" for v in bars.value], textposition="outside",
                            hovertemplate="%{y}: %{x:.1f}%<extra></extra>"))
     fig.update_layout(xaxis_range=[0, max(bars.value.max() * 1.35, 1)])
+    fig.update_xaxes(ticksuffix="%")
     fig.update_yaxes(autorange="reversed")
     st.plotly_chart(style_fig(fig, 220, legend=False, xlabel="Real growth a year, 2014–2023"),
                     use_container_width=True)
