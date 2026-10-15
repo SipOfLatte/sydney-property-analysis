@@ -67,9 +67,12 @@ Four pages built with Streamlit and Plotly:
 Run it locally:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt     # dashboard only
 streamlit run app/app.py
 ```
+
+To rerun the analysis instead, install the full environment with
+`pip install -r requirements-dev.txt`.
 
 ---
 
@@ -104,7 +107,7 @@ car-space pairs were being counted as two sales**.
 **Raw data is not in this repository** (760MB). To rebuild from scratch:
 
 ```bash
-pip install kaggle
+pip install -r requirements-dev.txt
 kaggle datasets download josephcheng123456/nsw-australia-property-data --unzip -p data/raw/nsw_vg
 kaggle datasets download alexlau203/sydney-house-prices --unzip -p data/raw/domain
 python src/clean_sales.py

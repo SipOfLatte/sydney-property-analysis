@@ -1,11 +1,6 @@
+# Dashboard runtime only (this is what Streamlit Cloud installs).
+# For the notebooks and the data pipeline, use requirements-dev.txt
+streamlit>=1.36
 pandas>=2.0
 numpy>=1.26
-matplotlib>=3.8
-seaborn>=0.13
-scikit-learn>=1.4
-statsmodels>=0.14
-pyarrow>=15
-jupyter>=1.0
-openpyxl>=3.1
-streamlit>=1.36
 plotly>=5.20
