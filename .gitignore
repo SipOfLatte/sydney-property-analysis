@@ -13,3 +13,6 @@ __pycache__/
 
 # Streamlit local secrets
 .streamlit/secrets.toml
+
+# Large source spreadsheets (re-downloadable; see README)
+data/external/rent/

@@ -10,7 +10,7 @@
 | NSW property sales (primary) | NSW Valuer General, via Kaggle `josephcheng123456/nsw-australia-property-data` | Q1–Q3, Q5–Q7 · 881k clean sales |
 | Domain Sydney sales (supporting) | Kaggle `alexlau203/sydney-house-prices` | Q4 feature value (beds/baths/parking), 2016–2021 sample |
 | ABS CPI (planned) | Australian Bureau of Statistics | Real (inflation-adjusted) growth |
-| ABS Census by postcode (stretch) | Australian Bureau of Statistics | Q8 growth drivers |
+| NSW DCJ Rent and Sales Report | NSW Department of Communities and Justice | Q8 rental yield and total return, 2017–2023 |
 
 **Tools:** Python (pandas, scikit-learn, statsmodels) → Streamlit dashboard
 
@@ -31,7 +31,7 @@ say how confident we are, give the sample size, and state the caveats.
 | Q5 | Is there seasonality in sale prices or volumes? | Timing of purchases | Month/quarter effects, controlling for year |
 | Q6 | Which suburbs look *undervalued* relative to their characteristics? | Deal sourcing | Model residuals aggregated by suburb |
 | Q7 | How volatile is each area? (risk vs return) | Risk-adjusted selection | Std dev of annual growth vs CAGR (risk/return quadrant) |
-| Q8 | *(stretch, with ABS data)* Is growth related to income / population / distance to the CBD? | Understand what drives growth | Join census data, correlation |
+| Q8 | What do properties yield, and does rental income change the houses-vs-units answer? | Total return, cash flow | Gross yield by postcode (NSW DCJ bond data) + repeat-sales growth |
 
 ## Deliverables
 1. Cleaned, documented dataset plus a data quality report
@@ -42,6 +42,6 @@ say how confident we are, give the sample size, and state the caveats.
 
 ## Known limitations (full detail in data_quality_report.md)
 - The main source has no beds/baths/parking. Q4 uses the smaller Domain sample, and growth uses a repeat-sales index to control for property mix.
-- It covers **sales records only**: no rent (so no yield) and no property condition. Land size is available for freestanding houses only.
+- Yields are **gross and market-level** (median rent ÷ median price by postcode), with costs assumed at 25% of rent. No property condition data; land size is available for freestanding houses only.
 - Medians are affected by which properties sold (composition bias). Where possible, compare like with like (same dwelling type, or repeat sales of the same property).
 - Prices are nominal. Consider CPI-adjusting (ABS CPI) to report real growth.

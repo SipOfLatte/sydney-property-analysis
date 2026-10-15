@@ -14,6 +14,8 @@ growth = load("suburb_growth")
 value = load("suburb_value_gap").set_index("suburb")
 councils = load("council_risk_return")
 history = load("suburb_annual_medians")
+yields = load("yield_by_postcode")
+suburb_pc = load("suburb_postcode").set_index("suburb")["post_code"]
 
 c1, c2 = st.columns([1, 2])
 segment = c1.selectbox("Dwelling type", list(SEGMENT_COLORS))
@@ -24,7 +26,12 @@ row = options.set_index("suburb").loc[suburb]
 colour = SEGMENT_COLORS[segment]
 gap = value.loc[suburb, "value_gap_%"] if suburb in value.index and segment == "House" else None
 
-m1, m2, m3, m4, m5 = st.columns(5)
+postcode = suburb_pc.get(suburb)
+yield_row = yields[(yields.year == yields.year.max()) & (yields.segment == segment)
+                   & (yields.post_code == postcode)]
+suburb_yield = yield_row["gross_yield_%"].iloc[0] if len(yield_row) else None
+
+m1, m2, m3, m4, m5, m6 = st.columns(6)
 m1.metric("Real growth a year", f"{row['real_cagr_%']:.1f}%", f"rank {int(row['rank'])} of {len(options)}",
           delta_color="off")
 m2.metric("Median price 2023", money(row.median_2023), f"2014: {money(row.median_2014)}", delta_color="off")
@@ -33,6 +40,9 @@ m4.metric("Repeat-sale pairs", f"{int(row.pairs):,}", "sample behind the estimat
 m5.metric("Value gap vs comparable areas", f"{gap:+.0f}%" if gap is not None else "–",
           "cheaper" if gap is not None and gap < 0 else ("dearer" if gap is not None else "houses only"),
           delta_color="off")
+m6.metric("Gross rental yield", f"{suburb_yield:.1f}%" if suburb_yield is not None else "–",
+          f"${int(yield_row.median_weekly_rent.iloc[0]):,}/wk in {int(postcode)}" if suburb_yield is not None
+          else "no postcode-level rent", delta_color="off")
 
 badges = []
 if row.shortlist:

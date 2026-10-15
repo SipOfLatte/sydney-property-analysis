@@ -16,12 +16,15 @@ Streamlit dashboard.
 | | Finding |
 |---|---|
 | **Growth is understated by medians** | Like-for-like (the same dwelling sold twice), houses rose **112%** and units **52%** over the decade — about 20 points more than median prices suggest. After inflation: **+64%** and **+18%**. |
-| **Houses beat units decisively** | **+37%** vs **−2%** real growth on medians; a house now costs **1.9× a unit**, a decade high. |
+| **Houses beat units decisively** | **+37%** vs **−2%** real growth; a house now costs **1.9× a unit**, a decade high. |
+| **Rent doesn't change that** | Total return (growth + net rent, 2017–23) was **8.0% a year for houses vs 4.6% for units**. Income narrows the gap by a third and no more. |
+| **Income and growth trade off fairly — for houses** | House total return is 10.5–10.8% a year in *every* yield quartile. For units, the **highest-yield markets returned least**. |
 | **Off-the-plan units underperform** | Units first sold off the plan resold **9.0% below** market value (±0.3%, 28,736 sales). Buy established stock instead. |
 | **Prestige outgrew affordable** | The most expensive suburbs in 2014 grew *fastest* (r ≈ 0.5), against the common "affordable has more room" belief. |
 | **Return without extra risk** | For houses, Woollahra, Willoughby, Ku-ring-gai and Mosman combined top growth with below-median volatility, and held their value in the 2017–19 downturn while the west fell 7–10%. |
 | **Feature sweet spot** | Target 4–5 bedrooms, 3 bathrooms, 2 car spaces. A 6th bedroom (−1%) and 3rd car space (0%) add nothing. |
 | **Timing** | Cycle timing matters ~10× more than seasonality. January is ~3% cheaper like-for-like, with half the listings. |
+| **Income sweet spot** | A 4th bedroom adds ~5% to a house's price but ~28% to its rent. |
 
 ![Sydney price cycles](reports/figures/q1_price_cycle.png)
 
@@ -60,7 +63,8 @@ Four pages built with Streamlit and Plotly:
 | Page | What it answers |
 |---|---|
 | **Market Overview** | Price cycles, nominal vs real, like-for-like vs median, seasonality |
-| **Suburb Explorer** | Growth, rank, risk and value gap for any suburb, with price history |
+| **Suburb Explorer** | Growth, rank, risk, value gap and yield for any suburb, with price history |
+| **Rental Yield** | Yields through the cycle, total return by segment, income vs price by postcode |
 | **Investment Screener** | Filter by budget, growth, volatility and value gap; export the shortlist |
 | **Features & Method** | What each bedroom/bathroom/car space is worth, plus method and limitations |
 
@@ -87,6 +91,7 @@ To rerun the analysis instead, install the full environment with
 | Q5 | Is there a best time of year to buy? | [01](notebooks/01_market_overview.ipynb) |
 | Q6 | Which suburbs look undervalued? | [03](notebooks/03_features_and_value.ipynb) |
 | Q7 | Which areas gave return without extra risk? | [02](notebooks/02_suburb_growth_risk.ipynb) |
+| Q8 | What do properties yield, and does income change the houses-vs-units answer? | [04](notebooks/04_rental_yield.ipynb) |
 
 ---
 
@@ -97,6 +102,7 @@ To rerun the analysis instead, install the full environment with
 | [NSW Valuer General sales](https://www.kaggle.com/datasets/josephcheng123456/nsw-australia-property-data) (Kaggle) | Every Sydney metro residential sale, 2014–2023 | 881,664 after cleaning |
 | [Domain Sydney listings](https://www.kaggle.com/datasets/alexlau203/sydney-house-prices) (Kaggle) | Bedrooms, bathrooms, parking, suburb fundamentals | 7,290 houses |
 | [ABS Sydney CPI](https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia) (table 6401017) | Inflation adjustment (+29% over the decade) | quarterly series |
+| [NSW DCJ Rent and Sales Report](https://dcj.nsw.gov.au/about-us/families-and-communities-statistics/housing-rent-and-sales/rent-and-sales-report.html) | Median weekly rent by postcode (new bonds lodged), December quarters 2017–2023 | 8,308 postcode rows |
 
 Cleaning removed duplicates, non-residential sales, bulk transfers of several dwellings on one contract, and prices
 outside $50k–$20M. Each step and its row count is logged in the
@@ -113,7 +119,9 @@ kaggle datasets download alexlau203/sydney-house-prices --unzip -p data/raw/doma
 python src/clean_sales.py
 ```
 
-Then run the notebooks in order. They regenerate everything in `data/exports/` that the dashboard reads.
+Rent tables come from the NSW DCJ *Rent and Sales Report* (December quarter files, 2017–2023); parse them with
+`python src/prepare_rent.py`. Then run the notebooks in order. They regenerate everything in `data/exports/` that
+the dashboard reads.
 
 ---
 
@@ -121,8 +129,8 @@ Then run the notebooks in order. They regenerate everything in `data/exports/` t
 
 ```
 app/                  Streamlit dashboard (app.py + views/)
-notebooks/            01 market overview · 02 suburb growth & risk · 03 features & value
-src/                  clean_sales.py · repeat_sales.py · viz_style.py
+notebooks/            01 market overview · 02 suburb growth & risk · 03 features & value · 04 rental yield
+src/                  clean_sales.py · repeat_sales.py · prepare_rent.py · viz_style.py
 data/exports/         Small CSVs the dashboard reads (committed)
 data/external/        ABS CPI series
 docs/                 Project brief · data quality report
@@ -133,7 +141,9 @@ reports/figures/      Chart exports from the notebooks
 
 ## Limitations
 
-- **Sales records only** — no rent, so no rental yield, and no property condition or floor area.
+- **Yields are gross and market-level** (median rent ÷ median price in the same postcode, not matched properties);
+  costs assumed at 25% of rent, with no tax, leverage or vacancy modelling. Rent data starts in 2017.
+- No property condition or floor area in any source.
 - Feature values come from a smaller Domain sample (7,290 houses, 2016–2021, half of them from 2021).
 - Value gaps are modelled for **houses only**, and only against *measured* fundamentals.
 - Repeat sales slightly overstate growth where owners renovated between sales.

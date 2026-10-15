@@ -2,15 +2,16 @@
 
 **Prepared for:** Acquisitions Committee · **Prepared by:** Jack (Data Analytics) · **Date:** October 2026
 **Evidence base:** 881,664 Sydney metro sales (NSW Valuer General, 2014–2023); 111,870 repeat sales of the same
-dwelling; 7,290 houses with bedroom/bathroom detail (Domain). Growth is after inflation unless stated.
+dwelling; 7,290 houses with bedroom/bathroom detail (Domain); rental bond data by postcode, 2017–2023 (NSW DCJ).
+Growth is after inflation unless stated.
 
 ---
 
 ## Bottom line
 
-1. **Houses outperformed units by a wide margin, and the gap is now at a decade high.** Houses returned 37% after
-   inflation over the decade while units lost 2%. A house now costs 1.9 times a unit, against 1.4 for most of the
-   period.
+1. **Houses outperformed units by a wide margin, and rental income does not change that.** Houses returned 37%
+   after inflation over the decade while units lost 2%. Counting rent, total return was **8.0% a year for houses
+   against 4.6% for units**. A house now costs 1.9 times a unit, against 1.4 for most of the period.
 2. **The best house markets delivered that growth without extra risk.** Woollahra, Willoughby, Ku-ring-gai and Mosman
    led on growth, had below-average volatility, and *rose* during the 2017–19 downturn while Western Sydney fell
    7–10%.
@@ -18,6 +19,8 @@ dwelling; 7,290 houses with bedroom/bathroom detail (Domain). Growth is after in
    both houses and units.
 4. **Buying new apartments off the plan cost about 9% of value.** Those units resold 9% below what the market
    otherwise supported — a measurable, avoidable loss.
+5. **Income is the best it has been all decade.** 2023 rents rose about 25% while prices fell, lifting gross yields
+   to 2.6% for houses and 4.1% for units.
 
 ---
 
@@ -25,13 +28,16 @@ dwelling; 7,290 houses with bedroom/bathroom detail (Domain). Growth is after in
 
 | # | Recommendation | Evidence | Confidence |
 |---|---|---|---|
-| 1 | **Weight the portfolio to houses**, not apartments, for capital growth | +37% vs −2% real over the decade; statistically clear (non-overlapping confidence intervals) | **High** |
+| 1 | **Weight the portfolio to houses**, not apartments | +37% vs −2% real capital growth; **8.0% vs 4.6% total return** including rent | **High** |
 | 2 | **Never buy units off the plan.** Buy the same stock on resale | 28,736 new-build sales resold 9.0% ±0.3% below market | **High** |
 | 3 | **Concentrate in the established east and north** (Woollahra, Ku-ring-gai, Mosman, Willoughby, Northern Beaches) | Highest growth, below-median volatility, resilient in the last downturn | **High** |
 | 4 | **Open a due-diligence file on 30 value-screen suburbs**, starting with Turramurra, Randwick and Kings Langley | Above-median growth *and* priced 5–22% below comparable areas | **Medium** — needs local checks |
 | 5 | **Target 4–5 bedroom, 3-bathroom houses with 2 car spaces** | Features stop adding value beyond this point | **Medium–High** |
 | 6 | **Exchange contracts in December–January; build the pipeline in Nov–Dec** | January is ~3% cheaper like-for-like | **Medium** — small effect |
 | 7 | **If the fund buys units at all, buy supply-constrained coastal markets** (Manly, Mona Vale, Avalon Beach), not high-rise corridors | Every top-15 unit market is coastal; 38 of 173 unit suburbs lost real value | **High** |
+| 8 | **Do not chase unit yield.** The highest-yield unit markets (Lakemba, Yagoona, Merrylands, 5.5–6.3% gross) gave up more growth than they paid in rent | Total return falls from 8.8% to 8.1% across unit yield quartiles | **Medium–High** |
+| 9 | **For houses, pick the yield level that suits cash-flow needs** — the market prices the trade-off fairly | Total return is 10.5–10.8% a year in *every* house yield quartile | **Medium–High** |
+| 10 | **Favour 4-bedroom houses for income:** about 5% dearer than 3-bedroom, but about 28% more rent | Hedonic price model vs DCJ rent by bedroom count | **Medium** |
 
 ---
 
@@ -101,8 +107,9 @@ is less to choose from. March and November are the busiest months and price slig
 
 ## Limitations
 
-- **No rental data**, so no yield and no total return. Units' higher rental income is not captured here and would
-  narrow the gap to houses. **This is the single biggest gap in the analysis.**
+- **Yields are gross and market-level**, built from median rents and median prices in the same postcode rather than
+  matched properties. Costs are assumed at 25% of rent; tax, leverage, vacancy and transaction costs are not modelled.
+- **Rent data starts in 2017**, so 2014–2016 is capital growth only.
 - Feature values come from a smaller sample (7,290 houses, 2016–2021) and cover houses only.
 - Value gaps are measured against fundamentals we can observe (land size, distance to CBD, income, location). They
   cannot see flood or bushfire risk, school catchments, transport plans or zoning changes.
@@ -114,11 +121,17 @@ is less to choose from. March and November are the busiest months and price slig
 
 ## Proposed next steps
 
-1. **Add rental data** (NSW Fair Trading publishes quarterly rents by postcode) to produce total returns. This would
-   settle the houses-vs-units question properly.
+1. **Model net returns properly** for the shortlisted suburbs: management costs, land tax, strata levies, vacancy
+   and the fund's financing structure. Gross yields overstate what the fund keeps.
 2. **Run due diligence on the three highest-conviction suburbs** (Turramurra, Randwick, Kings Langley): hazard
    overlays, school catchments, transport and zoning.
 3. **Extend the data to 2025** to test whether the prestige premium survived the rate-rise period.
 4. **Track monthly sales volume** as a leading indicator for the next cycle turn.
 
-*Full analysis, methods and data quality notes: three Jupyter notebooks and the dashboard in the project repository.*
+## Where the income is
+
+Yields run opposite to prices: in 2023 they ranged from **1.0% in Bellevue Hill** to **6.3% in Lakemba**. Houses in
+the premium east and north return 1.8–2.4% gross; the west and south-west 3.4%. Because total return is nearly
+identical across those bands, the choice is a **cash-flow decision, not a performance one**.
+
+*Full analysis, methods and data quality notes: four Jupyter notebooks and the dashboard in the project repository.*
