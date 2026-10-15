@@ -41,7 +41,7 @@ m5.metric("Value gap vs comparable areas", f"{gap:+.0f}%" if gap is not None els
           "cheaper" if gap is not None and gap < 0 else ("dearer" if gap is not None else "houses only"),
           delta_color="off")
 m6.metric("Gross rental yield", f"{suburb_yield:.1f}%" if suburb_yield is not None else "–",
-          f"${int(yield_row.median_weekly_rent.iloc[0]):,}/wk in {int(postcode)}" if suburb_yield is not None
+          f"${int(yield_row.median_weekly_rent.iloc[0]):,}/wk · postcode {int(postcode)}" if suburb_yield is not None
           else "no postcode-level rent", delta_color="off")
 
 badges = []
