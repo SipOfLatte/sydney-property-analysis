@@ -14,6 +14,17 @@ st.markdown('<p class="caption">Every measured suburb, placed at its centre poin
 
 CBD = (-33.8688, 151.2093)
 
+# Centre and zoom for the "Zoom to" presets, so a region is one click away
+VIEWS = {
+    "Whole metro": (-33.87, 150.99, 9.45),
+    "Inner Sydney (10 km)": (-33.88, 151.17, 11.2),
+    "Eastern suburbs": (-33.91, 151.24, 11.8),
+    "North Shore & Beaches": (-33.76, 151.21, 10.7),
+    "Inner West & the south": (-33.95, 151.10, 10.9),
+    "Parramatta & the west": (-33.80, 150.92, 10.2),
+    "South-west": (-34.00, 150.84, 10.2),
+}
+
 # Colour ramps built for the dark basemap: the low end stays visible instead of fading out.
 GROWTH_SCALE = [[0.0, "#5c5c58"], [0.3, "#1c5cab"], [0.65, HOUSE], [1.0, "#b8d6f7"]]
 YIELD_SCALE = [[0.0, "#5c5c58"], [0.35, "#8f3a1c"], [0.7, UNIT], [1.0, "#f3b48f"]]
@@ -122,6 +133,10 @@ with st.sidebar:
     councils = st.multiselect("Councils", sorted(d.council.dropna().unique()))
     only_candidates = st.checkbox("Value-screen candidates only", value=False)
     show_cbd = st.checkbox("Mark the CBD", value=True)
+    st.divider()
+    view = st.selectbox("Zoom to", list(VIEWS),
+                        help="Jumps the map to a part of the city. You can also scroll, drag, "
+                             "or use the + / − buttons on the map.")
 
 plot = d[d[m["col"]].notna() & (d.km_from_cbd <= max_km)].copy()
 plot = plot[plot.median_2023.isna() | plot.median_2023.between(budget[0] * 1e6, budget[1] * 1e6)]
@@ -191,16 +206,21 @@ if show_cbd:
                                 textposition="top right", textfont=dict(size=12, color=INK_2),
                                 marker=dict(size=9, color="#ffffff"), hoverinfo="skip", showlegend=False))
 
+lat0, lon0, zoom0 = VIEWS[view]
 fig.update_layout(
-    map=dict(style="carto-darkmatter", center=dict(lat=-33.87, lon=150.99), zoom=9.45),
-    height=620, margin=dict(l=0, r=0, t=0, b=0), paper_bgcolor=SURFACE, uirevision="map",
+    map=dict(style="carto-darkmatter", center=dict(lat=lat0, lon=lon0), zoom=zoom0),
+    height=620, margin=dict(l=0, r=0, t=0, b=0), paper_bgcolor=SURFACE,
+    # keyed on the preset: changing filters or the measure keeps the view you panned to,
+    # picking a new preset moves the map there
+    uirevision=f"map-{view}",
     font=dict(family="Segoe UI, system-ui, sans-serif", size=13, color=INK), showlegend=False,
 )
-# scrollZoom off so the wheel scrolls the page, not the map; pan and the +/- buttons still work
-st.plotly_chart(fig, use_container_width=True, config={"scrollZoom": False, "displaylogo": False})
+st.plotly_chart(fig, use_container_width=True,
+                config={"scrollZoom": True, "displayModeBar": True, "displaylogo": False})
 st.markdown(f'<p class="caption">{m["note"]} Dot size is the number of repeat sales behind the suburb, so small '
-            "dots deserve less weight. White rings mark the 30 value-screen candidates.</p>",
-            unsafe_allow_html=True)
+            "dots deserve less weight. White rings mark the 30 value-screen candidates. "
+            "<b>Scroll or use the + / − buttons to zoom, drag to pan</b>, or jump to a region with "
+            "<i>Zoom to</i> in the sidebar.</p>", unsafe_allow_html=True)
 
 # ------------------------------------------------------------------ distance gradient
 
