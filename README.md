@@ -9,6 +9,9 @@ investment fund wants evidence on **where**, **what type** and **when** to buy.
 Built with Python (pandas, scikit-learn, statsmodels) on **881,664 NSW Valuer General sales**, with an interactive
 Streamlit dashboard.
 
+[![Sydney property dashboard](reports/screenshots/01_market_overview.png)](https://sydney-property-analysis.streamlit.app/)
+
+
 ---
 
 ## Headline findings
@@ -67,6 +70,18 @@ Four pages built with Streamlit and Plotly:
 | **Rental Yield** | Yields through the cycle, total return by segment, income vs price by postcode |
 | **Investment Screener** | Filter by budget, growth, volatility and value gap; export the shortlist |
 | **Features & Method** | What each bedroom/bathroom/car space is worth, plus method and limitations |
+
+**Suburb Explorer** — every measured suburb, with growth, risk, value gap, yield and price history:
+
+![Suburb Explorer](reports/screenshots/02_suburb_explorer.png)
+
+**Rental Yield** — does rental income close the gap between houses and units?
+
+![Rental Yield](reports/screenshots/03_rental_yield.png)
+
+**Investment Screener** — filter on the fund's criteria and export the result:
+
+![Investment Screener](reports/screenshots/04_investment_screener.png)
 
 Run it locally:
 
@@ -135,6 +150,7 @@ data/exports/         Small CSVs the dashboard reads (committed)
 data/external/        ABS CPI series
 docs/                 Project brief · data quality report
 reports/figures/      Chart exports from the notebooks
+reports/screenshots/  Dashboard screenshots used in this README
 ```
 
 ---
